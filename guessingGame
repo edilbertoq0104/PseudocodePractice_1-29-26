@@ -1,0 +1,17 @@
+START
+  declare interger variable guess = 0
+  declare interger variable attempts = 7
+  declare interger variable answer : INTERGER
+  declare boolean variable done = false 
+
+  answer =  RAND_INT(1, 100)  
+
+While not done
+  PRINT "Welcome to number guessing game! You have 7 attempts to guess correctly!"
+  PRINT "Enter your guess from 1 to 100!"
+  Input guess
+
+  If guess < answer then
+    subtract (1 - attempts)
+    
+  

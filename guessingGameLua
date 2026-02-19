@@ -1,0 +1,54 @@
+--#1
+--Gen random number & tries
+
+tries = 7
+math.randomseed(os.time())
+math.random() math.random() math.random()
+answer = math.random(0,100)
+print(answer)
+
+--#2
+--Introduce user to the game,its rules and ask for input
+
+print("Welcome to radnom number game!", "You have 7 tries to guess correctly. Will you guess right?", "Type a number between 1-100 to begin!", "You have", tries, "tries left.")
+guess = tonumber(io.read())
+
+--#4
+--Error handling
+
+repeat
+
+while guess == nil do
+    print("Please insert numbers only!")
+    guess = tonumber(io.read())
+end
+
+--#5
+--Wrong guesses
+
+if guess > answer then
+    tries = tries - 1
+    print("Answer too high! Try again!", "You have", tries, "tries left")
+    guess = tonumber(io.read())
+    
+end
+
+if guess < answer then
+    tries = tries - 1
+    print("Answer too Low! Try again!", "You have", tries, "tries left")
+    guess = tonumber(io.read())
+    
+end
+
+until tries == 0 or guess == answer
+
+--#5
+--Win or loss
+
+if tries == 0 then 
+    print("You ran out of tries! You lose!")
+else
+    if guess == answer then
+        print("You guessed correctly! You win!", "Successfully guessed with", tries, "tries left")
+    end    
+end
